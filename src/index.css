@@ -9,3 +9,10 @@ html {
   color: #18181b;
   background-color: #f4f4f5;
 }
+
+.container {
+  max-width: 93.75rem;
+  width: 100%;
+  margin: auto;
+  padding: 1rem;
+}
