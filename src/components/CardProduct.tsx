@@ -17,7 +17,7 @@ export const CardProduct = ({ id, banner, name, price }: Product) => {
       <Image src={banner} className="max-h-80 p-2" />
       <div className="h-64 flex flex-col justify-between  p-8 bg-white border-t-2 border-solid border-zinc-100">
         <div className="flex flex-col gap-2">
-          <p className="font-semibold text-zinc-800">{name}</p>
+          <p className="font-semibold text-zinc-500">{name}</p>
           <strong className="font-black text-4xl text-indigo-500">
             {FormatNumber(price)}
           </strong>
