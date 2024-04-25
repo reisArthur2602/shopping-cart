@@ -1,5 +1,7 @@
+
 import { CardProduct } from '../components/CardProduct';
 import { ProductsItems } from '../utils/data';
+
 
 const Home = () => {
   return (

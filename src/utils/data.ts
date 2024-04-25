@@ -78,4 +78,25 @@ export const ProductsItems: Product[] = [
     banner:
       'https://cdn.awsli.com.br/2500x2500/241/241991/produto/250742196/shco-2553-41fcocoiyh.png',
   },
+  {
+    id: 12,
+    name: 'Console Xbox Series S - Microsoft',
+    price: 2049,
+    banner:
+      'https://cdn.awsli.com.br/2500x2500/138/138431/produto/95600823/54971451fe.jpg',
+  },
+  {
+    id: 13,
+    name: 'Jogo The Witcher 3: Wild Hunt - Xbox One',
+    price: 49,
+    banner:
+      'https://cdn.awsli.com.br/2500x2500/138/138431/produto/7988211/4760715b53.jpg',
+  },
+  {
+    id: 14,
+    name: 'Jogo Minecraft - Xbox 360',
+    price: 89,
+    banner:
+      'https://cdn.awsli.com.br/2500x2500/138/138431/produto/7988887/2f6d96dcc6.jpg',
+  },
 ];
