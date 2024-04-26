@@ -5,12 +5,14 @@ export type CartData = {
   name: string;
   price: number;
   banner: string;
-  ammount: number;
+  amount: number;
   total: number;
 };
 
+
+
 export type CartContextData = {
   cart: CartData[];
-  cartAmmount: number;
+  cartAmount: number;
   addCart: (product: Product) => void;
 };

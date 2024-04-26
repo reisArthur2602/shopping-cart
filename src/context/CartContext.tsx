@@ -15,25 +15,29 @@ export const CartProvider = ({ children }: CartProviderProps) => {
     const findProduct = cart.findIndex((item) => item.id === product.id);
 
     if (findProduct !== -1) {
-      const listCart = cart;
-      listCart[findProduct].ammount++;
-      listCart[findProduct].total =
-        listCart[findProduct].total * listCart[findProduct].ammount;
+      let cartList = cart;
+      cartList[findProduct].amount++;
+      cartList[findProduct].total =
+        cartList[findProduct].price * cartList[findProduct].amount;
+      setCart(cartList);
+     
       return;
     }
 
-    const data = {
+    let data = {
       ...product,
-      ammount: 1,
+      amount: 1,
       total: product.price,
     };
 
     setCart((products) => [...products, data]);
+ 
   };
-  console.log(cart);
+
+  
   return (
     <CartContext.Provider
-      value={{ cart, cartAmmount: cart?.length || 0, addCart }}
+      value={{ cart, cartAmount: cart.length || 0, addCart }}
     >
       {children}
     </CartContext.Provider>
