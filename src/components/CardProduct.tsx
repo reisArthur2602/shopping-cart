@@ -25,7 +25,7 @@ export const CardProduct = ({ id, cover, name, price }: Product) => {
 
         <button
           onClick={handleAddCart}
-          className=" flex items-center justify-center gap-2 w-full bg-zinc-950 p-4 rounded-sm text-zinc-100 hover:animate-pulse"
+          className="flex items-center justify-center gap-2 w-full bg-zinc-950 p-4 rounded-sm text-zinc-100 hover:animate-pulse"
         >
           Adicionar ao carrinho <ShoppingCart size={16} />
         </button>
