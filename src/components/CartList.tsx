@@ -17,7 +17,7 @@ export const CartList = ({
   return (
     <div
       key={id}
-      className="w-full flex items-center justify-between py-6 text-zinc-500 border-b-2 border-solid border-zinc-200"
+      className="w-full flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-4 py-6 text-zinc-500 border-b-2 border-solid border-zinc-200"
     >
       <Image src={cover} className="max-w-40 rounded-xl" />
       <p className=" max-w-96 w-full">{name}</p>
