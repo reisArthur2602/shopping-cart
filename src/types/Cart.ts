@@ -13,5 +13,6 @@ export type CartContextData = {
   cart: CartData[];
   cartAmount: number;
   addCart: (product: Product) => void;
+  removeCart: (id: number) => void;
   total: string;
 };

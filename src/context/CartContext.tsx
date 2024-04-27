@@ -22,7 +22,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
       cartList[findProduct].total =
         cartList[findProduct].price * cartList[findProduct].amount;
       setCart(cartList);
-      TotalResultCart(cartList);
+      totalResultCart(cartList);
       return;
     }
 
@@ -33,9 +33,9 @@ export const CartProvider = ({ children }: CartProviderProps) => {
     };
 
     setCart((products) => [...products, data]);
-    TotalResultCart([...cart, data]);
+    totalResultCart([...cart, data]);
   };
-  const TotalResultCart = (product: CartData[]) => {
+  const totalResultCart = (product: CartData[]) => {
     let result = product.reduce((acc, obj) => {
       return acc + obj.total;
     }, 0);
@@ -44,9 +44,27 @@ export const CartProvider = ({ children }: CartProviderProps) => {
     setTotal(resultFormated);
   };
 
+  const removeCart = (id: number) => {
+    const findProduct = cart.findIndex((item) => item.id === id);
+    let cartList = cart;
+
+    if (cartList[findProduct].amount > 1) {
+      cartList[findProduct].amount--;
+      cartList[findProduct].total =
+        cartList[findProduct].total - cartList[findProduct].price;
+      setCart(cartList);
+      totalResultCart(cartList);
+      return;
+    }
+
+    const removeItem = cart.filter((item) => item.id !== id);
+    setCart(removeItem);
+    totalResultCart(removeItem);
+  };
+
   return (
     <CartContext.Provider
-      value={{ cart, cartAmount: cart.length || 0, addCart, total }}
+      value={{ cart, cartAmount: cart.length || 0, addCart, total, removeCart }}
     >
       {children}
     </CartContext.Provider>

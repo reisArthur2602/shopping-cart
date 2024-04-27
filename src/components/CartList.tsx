@@ -12,7 +12,7 @@ export const CartList = ({
   total,
   price,
 }: CartData) => {
-  const { addCart } = useContext(CartContext);
+  const { addCart, removeCart } = useContext(CartContext);
 
   return (
     <div
@@ -32,7 +32,10 @@ export const CartList = ({
         <span className="text-base flex items-center justify-center h-8 w-8 border-solid border-1 border-zinc-600 ">
           {amount}
         </span>
-        <button className="text-2xl text-zinc-100 flex items-center justify-center rounded-md bg-indigo-500 h-8 w-8">
+        <button
+          onClick={() => removeCart(id)}
+          className="text-2xl text-zinc-100 flex items-center justify-center rounded-md bg-indigo-500 h-8 w-8"
+        >
           -
         </button>
       </div>

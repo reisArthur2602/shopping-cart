@@ -16,7 +16,7 @@ const Cart = () => {
         ))}
       </div>
 
-      {total && <strong className='text-2xl'>Total: {total}</strong>}
+      {total && <strong className='text-2xl'>Total:{total}</strong>}
     </section>
   );
 };
