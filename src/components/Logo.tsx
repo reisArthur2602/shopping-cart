@@ -5,7 +5,7 @@ export const Logo = () => {
   return (
     <Link to="/" className="flex items-center gap-1 text-zinc-100">
       <Gamepad size={40} />
-      <span className="font-semibold text-3xl">Games</span>
+      <span className="font-bold text-3xl">Games</span>
     </Link>
   );
 };
