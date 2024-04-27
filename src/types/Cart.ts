@@ -1,10 +1,10 @@
 import { Product } from './Product';
 
-export type CartData = {
+export type CartData  = {
   id: number;
   name: string;
   price: number;
-  banner: string;
+  cover: string;
   amount: number;
   total: number;
 };

@@ -20,7 +20,7 @@ export const CartProvider = ({ children }: CartProviderProps) => {
       cartList[findProduct].total =
         cartList[findProduct].price * cartList[findProduct].amount;
       setCart(cartList);
-     
+
       return;
     }
 
@@ -31,10 +31,8 @@ export const CartProvider = ({ children }: CartProviderProps) => {
     };
 
     setCart((products) => [...products, data]);
- 
   };
 
-  
   return (
     <CartContext.Provider
       value={{ cart, cartAmount: cart.length || 0, addCart }}
