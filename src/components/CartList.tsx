@@ -1,8 +1,19 @@
 import { FormatNumber } from '../utils/formatNumber';
 import { Image } from './Image';
 import { CartData } from '../types/Cart';
+import { useContext } from 'react';
+import { CartContext } from '../context/CartContext';
 
-export const CartList = ({ id, amount, cover, name, total }: CartData) => {
+export const CartList = ({
+  id,
+  amount,
+  cover,
+  name,
+  total,
+  price,
+}: CartData) => {
+  const { addCart } = useContext(CartContext);
+
   return (
     <div
       key={id}
@@ -12,7 +23,10 @@ export const CartList = ({ id, amount, cover, name, total }: CartData) => {
       <p className=" max-w-96 w-full">{name}</p>
 
       <div className="flex items-center justify-center gap-3">
-        <button className="text-2xl text-zinc-100 flex items-center justify-center rounded-md bg-indigo-500 h-8 w-8">
+        <button
+          onClick={() => addCart({ id, cover, name, price })}
+          className="text-2xl text-zinc-100 flex items-center justify-center rounded-md bg-indigo-500 h-8 w-8"
+        >
           +
         </button>
         <span className="text-base flex items-center justify-center h-8 w-8 border-solid border-1 border-zinc-600 ">

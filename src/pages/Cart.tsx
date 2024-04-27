@@ -3,7 +3,7 @@ import { CartContext } from '../context/CartContext';
 import { CartList } from '../components/CartList';
 
 const Cart = () => {
-  const { cart } = useContext(CartContext);
+  const { cart, total } = useContext(CartContext);
 
   return (
     <section className="layout">
@@ -13,6 +13,8 @@ const Cart = () => {
           <CartList key={product.id} {...product} />
         ))}
       </div>
+
+      {total && <p>{total}</p>}
     </section>
   );
 };

@@ -1,6 +1,6 @@
 import { Product } from './Product';
 
-export type CartData  = {
+export type CartData = {
   id: number;
   name: string;
   price: number;
@@ -9,10 +9,9 @@ export type CartData  = {
   total: number;
 };
 
-
-
 export type CartContextData = {
   cart: CartData[];
   cartAmount: number;
   addCart: (product: Product) => void;
+  total: string;
 };
